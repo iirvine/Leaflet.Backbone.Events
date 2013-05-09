@@ -1,0 +1,33 @@
+{
+  "name": "Leaflet.Backbone.Events",
+  "version": "0.0.0",
+  "description": "swap Leaflet's events module for Backbone's",
+  "main": "L.Backbone.Events.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iirvine/Leaflet.Backbone.Events.git"
+  },
+  "keywords": [
+    "leaflet",
+    "backbone",
+    "events"
+  ],
+  "author": "iirvine",
+  "license": "MIT",
+  "gitHead": "751e5ddb81806b8ec7c1b3e206276508a7a86b83",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "backbone": "~1.0.0",
+    "underscore": "~1.4.4",
+    "Leaflet": "git://github.com/Leaflet/Leaflet.git#68c45bc9feb733faec497e764edbf654a48243f8"
+  },
+  "devDependencies": {
+    "mocha": "~1.9.0",
+    "karma": "~0.8.5",
+    "jshint": "~2.0.1",
+    "uglify-js": "~2.3.2"
+  }
+}
