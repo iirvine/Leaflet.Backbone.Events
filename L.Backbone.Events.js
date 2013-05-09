@@ -17,7 +17,7 @@
 		_proxyTrigger: proxyTrigger,
 
 		hasEventListeners: function(type) {
-			return _.contains(_.keys(this._events), type)
+			return !!this._events && _.contains(_.keys(this._events), type)
 		}
 	});
 
