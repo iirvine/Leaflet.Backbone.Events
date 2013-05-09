@@ -27,12 +27,19 @@
 	L.Mixin.Events.removeEventListener = L.Mixin.Events.off;
 	L.Mixin.Events.clearAllEventListeners = L.Mixin.off;
 
+	function implementsEvents(obj) {
+		var old = _.keys(L.OldEvents);
+		return _.intersection(old, _.keys(obj)).length = old.length;
+	}
+
 	_.chain(L)
 		.filter(function(obj) {
-			return !_.isUndefined(obj.prototype) &&
-			_.intersection(_.keys(L.OldEvents), _.keys(obj.prototype)).length === _.keys(L.OldEvents).length;
+			return (!_.isUndefined(obj.__super__) && implementsEvents(obj.__super__)) ||
+			 (!_.isUndefined(obj.prototype) && implementsEvents(obj.prototype))
+
 		 })
 		.each(function(obj) {
+			if (!_.isUndefined(obj.__super__)) { _.extend(obj.__super__, L.Mixin.Events); }
 			_.extend(obj.prototype, L.Mixin.Events);
 		});
 }( Backbone, _, L ));
